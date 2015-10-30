@@ -1,11 +1,8 @@
 ---
 title: rev
 category: pattern_transformers
+signature: "rev :: Pattern a -> Pattern a"
 ---
-
-~~~~ {haskell}
-rev :: Pattern a -> Pattern a
-~~~~
 
 Reverse a pattern
 

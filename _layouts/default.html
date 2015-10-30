@@ -90,7 +90,22 @@
                     {% else %}
                     <article>
                         {% if doc.title != null %}
-                        <h1 id="{{ doc.title | slugify }}" class="tidal-toc-heading">{{ doc.title }}</h1>
+                        <h1 id="{{ doc.title | slugify }}" class="tidal-toc-heading">{{ doc.title }}
+                          {% if doc.signature %}
+                          {% capture signature_id %}tidal-function-signature-{{forloop.index}}{% endcapture %}
+                          {% capture md_signature %}
+~~~~{haskell}
+{{ doc.signature }}
+~~~~
+                          {% endcapture %}
+                          <a role="button" tabindex="{{forloop.index + 20}}"
+                             data-container="body" data-toggle="popover"
+                             data-placement="bottom"
+                             data-tidal-id="{{ signature_id }}"
+                             class="btn btn-info btn-xs tidal-btn-function-signature">
+                            &#955;<span class="sr-only tidal-function-signature"
+                                        id="{{ signature_id }}">{% highlight haskell %}{{ doc.signature }}{% endhighlight %}</span></a>{% endif %}
+                        </h1>
                         {% endif %} {{doc.content}}
                     </article>
                     {% endif %}
@@ -127,7 +142,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.js"></script>
     <script src="{{ site.baseurl }}/js/tidal.js"></script>
 </body>
 

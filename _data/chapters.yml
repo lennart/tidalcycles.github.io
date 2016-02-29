@@ -57,11 +57,11 @@
 - name: functions
   title: Reference
   sections:
-    - name: pattern_transformers
+    - name: patterntransformers
       title: Pattern Transformers
-    - name: sample
+    - name: sampletransformers
       title: Sample Transformers
-    - name: conditional
+    - name: conditionaltransformers
       title: Conditional Transformers
     - name: compositions
       title: Compositions

@@ -1,7 +1,7 @@
 # Overview
 
-*[Installation](_getting_started/installation/index.md)
-* Edito[integration](_getting_started/integration/index.md)rintegration
+* [Installation](_getting_started/installation/index.md)
+* [Editor integration](_getting_started/integration/index.md)
 
 
 

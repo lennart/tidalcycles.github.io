@@ -1,4 +1,3 @@
-# Summary
-
-* [Installation](installation.md)
+# Summry
+*[Installation](_getting_started/installation/index.md)
 

@@ -1,6 +1,2 @@
-{
-    "plugins": [
-        "styles-sass"
-    ],
-    "pluginsConfig": {}
-}
+{"plugins":["styles-sass"],
+"styles":"css/tidal.scss"]}

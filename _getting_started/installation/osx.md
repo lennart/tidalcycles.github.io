@@ -43,10 +43,8 @@ Install the 'jack audio connection kit' which Dirt also needs:
 brew install jack
 ```
 
-{% capture jackosx %}
-__Note:__ If Homebrew's installation of Jack fails with a `make` error, you can use the [JackOSX Installer](http://www.jackosx.com/download.html) instead. This will, however, add an additional step when installing Dirt (see below).
-{% endcapture %}
-{% include alert.html content=jackosx %}
+
+__Note:__ If Homebrew's installation of Jack fails with a `make` error, you can use the [JackOSX Installer](http://www.jackosx.com/download.html) instead. This will, however, add an additional step when installing Dirt (see below)
 
 
 ### Alternative: Installing dependencies via Mac Ports
@@ -76,17 +74,14 @@ cd ~/Dirt
 make clean; make
 ```
 
-{% capture dirtcompile %}
+
 If Dirt fails to compile after using the JackOSX installer as above, you may need to add flags to the Makefile to specify the appropriate paths:
 
 ```make
 CFLAGS += -g -I/usr/local/include -Wall -O3 -std=gnu99 -DCHANNELS=2
 LDFLAGS += -lm -L/usr/local/lib -llo -lsndfile -lsamplerate -ljack
 ```
-{% endcapture %}
-{% include alert.html content=dirtcompile caption="Homebrew users" %}
 
-{% capture dirtcompileport %}
 As MacPorts installs all libs on `/opt/local/`
 edit the Makefile to point the right direction of `libsndfile` and `libsamplerate`
 
@@ -94,8 +89,6 @@ edit the Makefile to point the right direction of `libsndfile` and `libsamplerat
 CFLAGS += -g -I/opt/local/include -Wall -O3 -std=gnu99
 LDFLAGS += -lm -L/opt/local/lib  -llo -lsndfile -lsamplerate
 ```
-{% endcapture %}
-{% include alert.html content=dirtcompileport caption="MacPorts users" %}
 
 
 ## Haskell
@@ -121,13 +114,11 @@ cabal install cabal-install
 cabal install tidal
 ```
 
-
-{% capture portmidiosx %} On OS X with GHC 7.10 it is necessary to reinstall PortMidi again with frameworks correctly linked:
+On OS X with GHC 7.10 it is necessary to reinstall PortMidi again with frameworks correctly linked:
 
 ```bash
 cabal install portmidi --ghc-options="-optl-Wl,-framework,CoreMIDI,-framework,CoreAudio" --reinstall --jobs=1 --force-reinstalls
 ```
-{% endcapture %} {% include alert.html content=portmidiosx caption="OS X users" %}
 
 Now you have to start dirt, the synthesizer/sampler, before getting a
 code editor going. So back in a terminal window, start jack:

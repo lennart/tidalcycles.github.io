@@ -1,2 +1,4 @@
-{"plugins":["styles-sass"],
-"styles":"css/tidal.scss"]}
+{
+"plugins":["styles-sass"],
+"styles":{
+"website":"css/tidal.scss"}}
